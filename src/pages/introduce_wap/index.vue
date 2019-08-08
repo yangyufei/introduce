@@ -10,11 +10,12 @@
             <p>中小学全流程教育教学云平台</p>
             <p>为新高考提供一站式整体解决方案</p>
         </div>
-        <!-- <img src="@/assets/wap/erweima_wap_wx.png" class="erweima-wap" alt="" v-if="isWeixin" />
-        <img src="@/assets/wap/erweima_wap_net.png" class="erweima-wap" alt="" v-else /> -->
-        <div class="erweima-wap-con">
+        <!-- 静态二维码 -->
+        <img src="@/assets/wap/erweima_wap_wx.png" class="erweima-wap" alt="" v-if="isWeixin" />
+        <img src="@/assets/wap/erweima_wap_net.png" class="erweima-wap" alt="" v-else />
+        <!-- 动态二维码,需要获取参数 -->
+        <div class="erweima-wap-con" style="display: none;">
           <img :src="qrcodeImg" alt="">
-          <!-- <img src="@/assets/wap/only_erweima_wap.png" alt=""> -->
           <p v-if="isWeixin">长按识别二维码进入小程序</p>
           <p v-else>请保存上方小程序码图片，在微信扫一扫中打开，或在微信中搜索小程序“倍思教育科技”。</p>
         </div>

@@ -11,10 +11,10 @@ export default {
   methods: {
 		reqQrcode() {
 			let params = {
-        userId: this.$store.state.userId.userId,
-        type: 'EDUYUN'
+        // userId: this.$store.state.userId.userId,
+        type: 'EDUYUN',
         // userName: this.$store.state.userId.userName,
-        // userId: 'test_teacheraf74b11e6a293286ed48',
+        userId: 'test_teacheraf74b11e6a293286ed48',
         // userName: '测试教师-勿删',
         // gender: 1,
         // hasBind: true,

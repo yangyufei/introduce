@@ -15,8 +15,10 @@
                   <!--<a :href=ticketUrl>打开PC客户端</a>-->
                   <a @click="init">打开PC客户端</a>
                   <img src="@/assets/click_erweima.png" class="erweima_button" alt="" @mouseenter="showQrcode"/>
-                  <!-- <img src="@/assets/wx_erweima.png" class="erweima_wx" alt=""/> -->
-                  <div class="erweima_wx">
+                  <!-- 静态二维码，使用以下内容 -->
+                  <img src="@/assets/wx_erweima.png" class="erweima_wx" alt=""/>
+                  <!-- 如果需要动态获取二维码，则使用以下内容 -->
+                  <div class="erweima_wx" style="display: none">
                     <img :src="qrcodeImg" alt="">
                     <p>请使用微信扫描二维码登录小程序</p>
                   </div>
@@ -82,15 +84,16 @@ export default {
 	  // this.init()
   },
   methods: {
+    // 打开客户端
 	  init(){
-	    let userId=this.$store.state.userId.userId;
-	    if(userId&&userId.length){
-        // this.ticketUrl=`baseOnline://?userId=${this.$store.state.userId.userId}`
-        window.location.href=`baseOnline://?userId=${this.$store.state.userId.userId}`
-      }else{
-        this.ticketUrl='#'
-	      alert('异常')
-      }
+	    // let userId=this.$store.state.userId.userId;
+	    // if(userId&&userId.length){
+      //   // this.ticketUrl=`baseOnline://?userId=${this.$store.state.userId.userId}`
+      //   window.location.href=`baseOnline://?userId=${this.$store.state.userId.userId}`
+      // }else{
+      //   this.ticketUrl='#'
+	    //   alert('异常')
+      // }
     },
     // 跳转到官网
     toNet() {

@@ -8,17 +8,9 @@
 export default {
   name: 'App',
   mounted() {
-    // debugger
-    let ticketVal=window.location.href.split("?")[1].split("=")[1].replace(/\%3D/g,"=")
-    // let ticketVal = this.GetQueryString('ticket')
+    // let ticketVal=window.location.href.split("?")[1].split("=")[1].replace(/\%3D/g,"=")
+    let ticketVal = this.GetQueryString('ticket')
     this.getUserId(ticketVal)
-    // if (this._isMobile()) {
-    //   // alert("手机端");
-    //   this.$router.replace('/introduce_wap');
-    // } else {
-    //   // alert("pc端");
-    //   this.$router.replace('/introduce_pc');
-    // }
   },
   methods: {
     // 获取用户id
@@ -30,10 +22,7 @@ export default {
       }
       this.$ajax.get('/extra/user/getUserId', params).then(res => {
         console.log(res.code)
-				if (res.code == 200) {
-          // sessionStorage.setItem('userId',ticketVal)
-
-          this.$store.commit('GET_USERID', {userId: res.data.userId, userName: res.data.userName})
+				if (res.code == 200) {this.$store.commit('GET_USERID', {userId: res.data.userId, userName: res.data.userName})
         } else {
           this.$store.commit('GET_USERID', {userId: '', userName: ''})
         }
